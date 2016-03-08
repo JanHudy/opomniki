@@ -6,16 +6,18 @@ window.addEventListener('load', function() {
 		document.querySelector("#uporabnik").innerHTML = uporabnik;
 		document.querySelector(".pokrivalo").style.visibility = "hidden";
 	}
-	
-	var aliEnter = function(e) {
-		if (13 == e.keyCode) {
-			potrdiPrijavo();
-		}
-	}
-	//var e;
+
 	document.querySelector("#prijavniGumb").addEventListener("click", potrdiPrijavo);
-	document.querySelector("#prijavniGumb").addEventListener("keypress", aliEnter(e));
+
+	var dodajOpomnik = function() {
+		var opomnikIme = document.querySelector("#naziv_opomnika").value;
+		var opomnikCas = document.querySelector("#cas_opomnika").value;
+		
+		document.getElementById("naziv_opomnika").reset();
+		document.getElementById("cas_opomnika").reset();
+	}
 	
+	document.querySelector("#dodajOpomnik").addEventListener("click", dodajOpomnik);
 	//Posodobi opomnike
 	var posodobiOpomnike = function() {
 		var opomniki = document.querySelectorAll(".opomnik");
