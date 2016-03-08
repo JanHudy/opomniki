@@ -1,6 +1,21 @@
 window.addEventListener('load', function() {
 	//stran nalozena
 		
+	var potrdiPrijavo = function() {
+		var uporabnik = document.querySelector("#uporabnisko_ime").value;
+		document.querySelector("#uporabnik").innerHTML = uporabnik;
+		document.querySelector(".pokrivalo").style.visibility = "hidden";
+	}
+	
+	var aliEnter = function(e) {
+		if (13 == e.keyCode) {
+			potrdiPrijavo();
+		}
+	}
+	//var e;
+	document.querySelector("#prijavniGumb").addEventListener("click", potrdiPrijavo);
+	document.querySelector("#prijavniGumb").addEventListener("keypress", aliEnter(e));
+	
 	//Posodobi opomnike
 	var posodobiOpomnike = function() {
 		var opomniki = document.querySelectorAll(".opomnik");
